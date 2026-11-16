@@ -1,4 +1,5 @@
-description: "ALBA E-Waste Recycling & Rewards Manager",
+module.exports = {
+    description: "ALBA E-Waste Recycling & Rewards Manager",
 
     // Simulated database arrays & user points
     eBins: [
@@ -13,8 +14,7 @@ description: "ALBA E-Waste Recycling & Rewards Manager",
         U101: 40,
         U102: 10
     },
-
-module.exports = {
+    
     // Explain what function A does
     functionA() {
         return 1+2;
