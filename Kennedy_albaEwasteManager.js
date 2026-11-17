@@ -16,8 +16,12 @@ module.exports = {
     },
     
     // Explain what function A does
-    functionA() {
-        return 1+2;
+    findAvailableBins(itemType) {
+        let results = [];
+        for (let i = 0; i < this.eBins.length; i++){
+            
+        }
+
     },
     // Explain what function B does
     functionB() {
