@@ -19,12 +19,15 @@ module.exports = {
     findAvailableBins(itemType) {
         let results = [];
         for (let i = 0; i < this.eBins.length; i++){
-            
+            let bin = this.eBins[i];
+            if (bin.type === itemType && bin.currentKg < bin.maxKg){
+                results.push(bin);
+            }
         }
-
+        return results;
     },
     // Explain what function B does
-    functionB() {
-        console.log("Hello function B");
-    }
+    calculatePoints(itemType, weightKg) {
+        
+    },
 }
