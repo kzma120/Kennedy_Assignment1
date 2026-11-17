@@ -15,7 +15,7 @@ module.exports = {
         U102: 10
     },
     
-    // Explain what function A does
+    // Finds and returns all e-waste bins matching the item type that still have space available
     findAvailableBins(itemType) {
         let results = [];
         for (let i = 0; i < this.eBins.length; i++){
@@ -26,7 +26,8 @@ module.exports = {
         }
         return results;
     },
-    // Explain what function B does
+
+    // Calculates reward points earned based on the e-waste category and weight in kg
     calculatePoints(itemType, weightKg) {
        if (itemType === "ICT") {
         return weightKg * 20;
@@ -39,7 +40,7 @@ module.exports = {
        }
     },
 
-    //
+    // Validates the bin, updates bin weight and user points, and records a new recycling drop-off log
     logDropOff(userId, binId, itemType, weightKg){
         let selectedBin = null;
         for (let i = 0; i < this.eBins.length; i++){
@@ -73,7 +74,7 @@ module.exports = {
         return "Recycling Log updated successfully."
     },
 
-    //
+    // Checks if the user has enough points and deducts the required points to redeem a voucher
     redeemVoucher(userId, pointsNeeded){
         let currentPoints = this.userPoints[userId];
         if (currentPoints === undefined){
@@ -86,7 +87,7 @@ module.exports = {
         return "Redeemed voucher successfully!"
     },
 
-    //
+    // Returns a list of bins that have reached at least 80% of their maximum weight capacity
     getFullBins(){
         let fullBins = [];
         for (let i = 0; i < this.eBins.length; i++){
